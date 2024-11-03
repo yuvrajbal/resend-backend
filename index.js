@@ -1,10 +1,12 @@
 const express = require("express");
 const { Resend } = require("resend");
+const cors = require("cors");
 require("dotenv").config();
 const app = express();
 const port = process.env.PORT || 3000;
 const resend = new Resend(process.env.RESEND_API_KEY);
 app.use(express.json());
+app.use(cors());
 
 app.get("/", (req, res) => {
   res.send("hello world");

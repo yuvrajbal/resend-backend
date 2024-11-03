@@ -23,6 +23,7 @@ app.post("/send-email", async (req, res) => {
       to: email,
       subject: "Thank you for reaching out to Yuvraj",
       html: `<strong> Thank you for contacting me through my website , I am excited to work with you !</strong><p>Your message: ${body}</p>`,
+      bcc: ["balyuvraj14@gmail.com"],
     });
     res.status(200).json({
       message: "Email sent succesfully",
